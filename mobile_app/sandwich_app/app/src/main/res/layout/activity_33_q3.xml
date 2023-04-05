@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "3.가장 좋아하는 식재료를 고르세요."
+        android:textSize="25dp">
+
+    </TextView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "소고기"/>
+
+        <RadioButton
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "돼지고기"/>
+
+        <RadioButton
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "닭고기"/>
+
+        <RadioButton
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "달걀"/>
+
+        <RadioButton
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "참치"/>
+
+
+        <RadioButton
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "채식"/>
+
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id = "@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text = "이전"/>
+
+        <Space
+            android:layout_width="150dp"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:id = "@+id/button_next"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text = "다음"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
