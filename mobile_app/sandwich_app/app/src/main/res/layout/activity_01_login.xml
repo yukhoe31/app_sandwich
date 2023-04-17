@@ -1,52 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF">
+
+
+
 
     <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:id="@+id/emailInput"
-        android:layout_centerHorizontal="true"
-        android:hint="Email"
-        android:layout_marginTop="151dp" />
-
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:id="@+id/passwordInput"
-        android:layout_centerHorizontal="true"
-        android:hint="Password"
-        android:layout_below="@+id/emailInput" />
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="로그인"
-
-        android:textAllCaps="false"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/passwordInput"
-        android:layout_toStartOf="@+id/signupButton" />
-
-    <Button
-
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="회원가입"
-        android:textAllCaps="false"
-        android:id="@+id/signupButton"
-        android:layout_alignTop="@+id/loginButton"
-        android:layout_alignEnd="@+id/passwordInput" />
-
-    <CheckBox
+        android:id="@+id/et_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remember login"
-        android:id="@+id/checkBox"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/loginButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="200dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <EditText
+        android:id="@+id/et_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="로그인"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="회원가입"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd"
+        app:layout_constraintVertical_bias="0.53" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

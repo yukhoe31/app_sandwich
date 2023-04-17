@@ -39,15 +39,17 @@
             android:id="@+id/button3"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:text="입맛 테스트">
+            android:text="내 정보"></Button>
 
-        </Button>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"></Button>
 
 
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>

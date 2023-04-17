@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "121455889356",
+    "project_id": "sandwich-custom",
+    "storage_bucket": "sandwich-custom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121455889356:android:6abcc6ddf97e026af1eb69",
+        "android_client_info": {
+          "package_name": "com.example.sandwichcustom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121455889356-b7r8ge96e59dg1st71k8jsmlhiomho14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDccrzPNEopFuXLGXQhXEeRfXEQ0zI6e24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121455889356-b7r8ge96e59dg1st71k8jsmlhiomho14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
