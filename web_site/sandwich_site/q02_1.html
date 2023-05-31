@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>써브웨이 맞춤형 조합 추천</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha381-KK91CHFLLe+nY2dmCWGMq91rCGa5gtU1mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <h3>"기호도 테스트"</h3>
+    <!--닭고기-->
+
+    <br><b> Q.닭가슴살을 좋아하나요?</b><br>  
+    <input type="radio" name = "menu_chicken" id="q2_1_o1" value="q2_1_o1">예<br>   <!--6 치킨 슬라이스--> <!--8 로스트 치킨-->
+    <input type="radio" name = "menu_chicken" id="q2_1_o2" value="q2_1_o2">아니오<br>    <!--9 로티세리 바베큐 치킨--> <!--17 치킨 데리야끼-->
+  
+    <button id="button_q2_1_b" type="submit" onClick="history.go(-1)"> 이전 </button>
+    <button id="button_q2_1" type="submit"> 제출 </button>
+
+    
+    <script>
+        document.getElementById("button_q2_1").addEventListener("click", function (event) {
+            var selectedValue = document.querySelector('input[name="menu_chicken"]:checked').value;
+
+            if (selectedValue === 'q2_1_o1') {
+                localStorage.setItem("menu", "치킨 슬라이스");
+                localStorage.setItem("menu2", "로스트 치킨");
+                
+            } else if (selectedValue === 'q2_1_o2') {
+                localStorage.setItem("menu", "로티세리 바베큐 치킨");
+                localStorage.setItem("menu2", "치킨 데리야끼");
+                
+            }else {
+                alert("하나의 답안을 선택해주세요.");
+            }
+
+            location.href = 'recommendation.html';
+            event.preventDefault(); // 폼 제출 기본 동작 방지
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha381-ENjdO1Dr2bkBIFxQpeoTz1HIcje39Wm1jDKdf19U8gI1ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+</html>
