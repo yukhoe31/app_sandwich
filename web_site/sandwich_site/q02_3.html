@@ -21,16 +21,16 @@
 
     
     <script>
-        document.getElementById("button_q2_1").addEventListener("click", function (event) {
+        document.getElementById("button_q2_3").addEventListener("click", function (event) {
             var selectedValue = document.querySelector('input[name="menu_chipig"]:checked').value;
 
             if (selectedValue === 'q2_3_o1') {
                 localStorage.setItem("menu", "치킨 베이컨 아보카도");
-                //localStorage.setItem("menu2", "0");
+                localStorage.setItem("menu2", "없다");
                 
             } else if (selectedValue === 'q2_3_o2') {
                 localStorage.setItem("menu", "써브웨이 클럽");
-                //localStorage.setItem("menu2", "0");
+                localStorage.setItem("menu2", "없다");
                 
             }else {
                 alert("하나의 답안을 선택해주세요.");

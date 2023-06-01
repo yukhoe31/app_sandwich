@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,18 +21,18 @@
         <script>
             // 로컬 스토리지에서 빵 정보 가져오기
             const bread = localStorage.getItem("bread");
-            const menu = localStorage.getItem("menu");
+            const menu = localStorage.getItem("menu");            
+            const sau = localStorage.getItem("sau");  
             const menu2 = localStorage.getItem("menu2");
-
-            const sau = localStorage.getItem("sau");
             const sau2 = localStorage.getItem("sau2");
 
 
-            let answer_bread;
-            let answer_menu;
-            let answer_menu2 = '0';
-            let answer_sau;
+            let answer_menu2;
             let answer_sau2;
+            let answer_bread;
+            let answer_menu;        
+            let answer_sau;
+            
 
 
             // 빵 정보에 따라 빵 추천 설정
@@ -62,105 +64,123 @@
             switch (menu) {
                 case '치킨 슬라이스':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 랜치, 스윗 칠리'
+                    answer_sau = '추천 소스 : 랜치, 스윗 칠리'
                     break;
-                case '로스트 치킨':
+                case '로티세리 바베큐 치킨':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 스윗 칠리, 사우스웨스트 치폴레'
+                    answer_sau = '추천 소스 : 스윗 칠리, 랜치'
                     break;
                 case '스테이크 앤 치즈':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 사우스웨스트 치폴레, 마요네즈'
+                    answer_sau = '추천 소스 : 사우스웨스트 치폴레, 마요네즈'
                     break;
                 case '참치':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 핫 칠리, 스윗 칠리'
+                    answer_sau = '추천 소스 : 핫 칠리, 스윗 칠리'
                     break;
                 case '쉬림프':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 랜치, 스윗 칠리'
+                    answer_sau = '추천 소스 : 랜치, 스윗 칠리'
                     break;
                 case '에그마요':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 랜치, 스윗 칠리'
+                    answer_sau = '추천 소스 : 랜치, 스윗 칠리'
                     break;
                 case '베지':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 레드와인 식초, 올리브 오일'
+                    answer_sau = '추천 소스 : 레드와인 식초, 올리브 오일'
                     break;
                 case '치킨 베이컨 아보카도':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 랜치, 홀스래디쉬'
+                    answer_sau = '추천 소스 : 랜치, 홀스래디쉬'
                     break;
                 case '써브웨이 클럽':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 랜치, 스윗 어니언'
+                    answer_sau = '추천 소스 : 랜치, 스윗 어니언'
                     break;
                 case '이탈리안 BMT':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 랜치, 스윗 어니언'
+                    answer_sau = '추천 소스 : 랜치, 스윗 어니언'
                     break;
                 case 'K-바베큐':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 올리브 오일, 후추'
+                    answer_sau = '추천 소스 : 올리브 오일, 후추'
                     break;
                 case 'BLT':
                     answer_menu = '추천 메뉴 1: ' + menu;
-                    answer_sau = '소스 : 마요네즈, 사우스웨스트 치폴레'
+                    answer_sau = '추천 소스 : 마요네즈, 사우스웨스트 치폴레'
                     break;
                 default:
                     answer_menu = '올바른 메뉴 정보가 없습니다.';
-                    break;
+
+                    //break;
             }
+
+
+            
+
+
 
             
             //메뉴 정보에 따라 메뉴 추천 설정
             switch (menu2) {
-                case '로티세리 바베큐 치킨':
+                case '로스트 치킨':
                     answer_menu2 = '추천 메뉴 2: ' + menu2;
-                    answer_sau2 = '소스 : 랜치, 스윗 칠리'
+                    answer_sau2 = '추천 소스 : 사우스웨스트 치폴레, 스윗 칠리'
                     break;
                 case '치킨 데리야끼':
                     answer_menu2 = '추천 메뉴 2 : ' + menu2;
-                    answer_sau2 = '소스 : 스모크 바베큐, 마요네즈'
+                    answer_sau2 = '추천 소스 : 스모크 바베큐, 마요네즈'
                     break;
                 case '스파이시 이탈리안':
                     answer_menu2 = '추천 메뉴 2 : ' + menu2;
-                    answer_sau2 = '소스 : 랜치, 스윗 어니언'
+                    answer_sau2 = '추천 소스 : 랜치, 스윗 어니언'
                     break;
                 case '풀드 포크 바베큐':
                     answer_menu2 = '추천 메뉴 2 : ' + menu2;
-                    answer_sau2 = '소스 : 랜치, 스모크 바베큐'
+                    answer_sau2 = '추천 소스 : 랜치, 스모크 바베큐'
                     break;
                 case '햄':
                     answer_menu2 = '추천 메뉴 2 : ' + menu2;
-                    answer_sau2 = '소스 : 랜치, 스윗 칠리'
+                    answer_sau2 = '추천 소스 : 랜치, 스윗 칠리'
                     break;
                 default:
-                    answer_menu2 = '0';
-                    answer_sau2 = '0'
-                    break;
+                    answer_menu2 = '없다';
+                    answer_sau2 != '없다';
+                    //break;
             }
 
-            
 
 
-    
+            /*
             // 추천 빵 출력
             document.getElementById('breadRecommendation').innerText = answer_bread;
             //추천 메뉴 출력
             document.getElementById('menuRecommendation').innerText = answer_menu;
             document.getElementById('sauRecommendation').innerText = answer_sau;
-            document("===============")
-            //추천 메뉴2가 존재한다면
-            if (answer_menu2 != '0' && answer_sau2 != '0' ){
-                document.getElementById('menuRecommendation2').innerText = answer_menu2;
-                document.getElementById('sauRecommendation').innerText = answer_sau2;
-            }
-            
-            
 
-            
+            // 추천 메뉴2가 존재한다면
+            if (answer_menu2 != '없다' && answer_sau2 != '없다') {
+                document.getElementById('menuRecommendation2').innerText =  answer_menu2;
+                document.getElementById('sauRecommendation2').innerText = answer_sau2;
+            }
+            */
+
+
+            // 추천 메뉴 1과 추천 소스를 하나의 문자열로 결합
+            var recommendation1 = answer_menu + '\n' + answer_sau;
+
+            // 추천 메뉴 2와 추천 소스를 하나의 문자열로 결합
+            var recommendation2 = answer_menu2 + '\n' + answer_sau2;
+
+            // 메뉴 1과 소스 1 출력
+            document.getElementById('menuRecommendation').innerText = recommendation1;
+
+            // 추천 메뉴 2와 소스 2가 존재할 경우에만 출력
+            if (answer_menu2 != '없다' && answer_sau2 != '없다') {
+                document.getElementById('menuRecommendation2').innerText = recommendation2;
+            }
+
 
         </script>
     
