@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오렌지마켓</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">오렌지마켓</a>
+       
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--상품명 가격 등 입력가능한 폼 만들기-->
+    <div class="container mt-3">
+      <input
+        type="text"
+        class="form-control mt-2"
+        id="title"
+        placeholder="title"
+      />
+      <textarea class="form-control mt-2" id="content">content</textarea>
+      <input
+        type="text"
+        class="form-control mt-2"
+        id="price"
+        placeholder="price"
+      />
+      <input class="form-control mt-2" type="file" id="image" />
+      <button class="btn btn-warning mt-3" id="send">수정하기</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!--bootstrap-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <!--제이쿼리-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAHSSKGpM31Qiwydu1P6rVo8e634LD7RLE",
+        authDomain: "orangemarket-d1467.firebaseapp.com",
+        projectId: "orangemarket-d1467",
+        storageBucket: "orangemarket-d1467.appspot.com",
+        messagingSenderId: "78991260112",
+        appId: "1:78991260112:web:05a46179980122c2fe61d5",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+          const db= firebase.firestore();//database문법 소환술
+          //db.collection('product').doc("상품4").set({ 제목 : "피젯스피너" });
+          //db.collection('product').add({ 제목 : "피젯스피너" }); -->'상품4'가 아니라 랜덤한 id로 등록된다.
+          const storage = firebase.storage();
+
+          var 쿼리스트링 = new URLSearchParams(window.location.search);
+          쿼리스트링.get('id');
+
+            db.collection('product').doc( 쿼리스트링.get('id') ).get().then((result)=>{
+                console.log(result.data())
+                $('#title').val(result.data().제목)
+                $('#content').val(result.data().상품설명)
+                $('#image').val(result.data().이미지)
+                $('#price').val(result.data().가격)
+            })
+
+          
+            $('#send').click(function(){
+                var 바꿀거 = {
+                    제목 : $('#title').val(),
+                    가격 : $('#price').val(),
+                    이미지 : $('#image').val(),
+                    상품설명 : $('#content').val()
+                }
+
+                db.collection('product').doc(쿼리스트링.get('id')).update(바꿀거)
+            })
+    
+              
+          
+    </script>
+  </body>
+</html>
