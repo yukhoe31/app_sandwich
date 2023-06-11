@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">추천 조합</a>
-        <span class="ms-auto mx-2" id="userName">익명</span>
+        <!--<span class="ms-auto mx-2" id="userName">익명</span>-->
         <button
           class="navbar-toggler"
           type="button"
@@ -78,22 +78,22 @@
         // 빵 정보에 따라 빵 추천 설정
         switch (bread) {
             case '허니오트':
-                answer_bread = '빵: ' + bread;
+                answer_bread = bread;
                 break;
             case '하티':
-                answer_bread = '빵: ' + bread;
+                answer_bread =  bread;
                 break;
             case '위트':
-                answer_bread = '빵: ' + bread;
+                answer_bread = bread;
                 break;
             case '파마산 오레가노':
-                answer_bread = '빵: ' + bread;
+                answer_bread = bread;
                 break;
             case '화이트':
-                answer_bread = '빵: ' + bread;
+                answer_bread =  bread;
                 break;
             case '플랫브래드':
-                answer_bread = '빵: ' + bread;
+                answer_bread = bread;
                 break;
             default:
                 answer_bread = '올바른 빵 정보가 없습니다.';
@@ -103,52 +103,52 @@
         //메뉴 정보에 따라 메뉴 추천 설정
         switch (menu) {
             case '치킨 슬라이스':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 랜치, 스윗 칠리'
+                answer_menu =  menu;
+                answer_sau = '랜치, 스윗 칠리'
                 break;
             case '로티세리 바베큐 치킨':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 스윗 칠리, 랜치'
+                answer_menu =  menu;
+                answer_sau = '스윗 칠리, 랜치'
                 break;
             case '스테이크 앤 치즈':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 사우스웨스트 치폴레, 마요네즈'
+                answer_menu = menu;
+                answer_sau = '사우스웨스트 치폴레, 마요네즈'
                 break;
             case '참치':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 핫 칠리, 스윗 칠리'
+                answer_menu =  menu;
+                answer_sau = '핫 칠리, 스윗 칠리'
                 break;
             case '쉬림프':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 랜치, 스윗 칠리'
+                answer_menu =  menu;
+                answer_sau = '랜치, 스윗 칠리'
                 break;
             case '에그마요':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 랜치, 스윗 칠리'
+                answer_menu = menu;
+                answer_sau = '랜치, 스윗 칠리'
                 break;
             case '베지':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 레드와인 식초, 올리브 오일'
+                answer_menu =  menu;
+                answer_sau = '레드와인 식초, 올리브 오일'
                 break;
             case '치킨 베이컨 아보카도':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 랜치, 홀스래디쉬'
+                answer_menu =  menu;
+                answer_sau = '랜치, 홀스래디쉬'
                 break;
             case '써브웨이 클럽':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 랜치, 스윗 어니언'
+                answer_menu =  menu;
+                answer_sau = '랜치, 스윗 어니언'
                 break;
             case '이탈리안 BMT':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 랜치, 스윗 어니언'
+                answer_menu = menu;
+                answer_sau = '랜치, 스윗 어니언'
                 break;
             case 'K-바베큐':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 올리브 오일, 후추'
+                answer_menu =  menu;
+                answer_sau = '올리브 오일, 후추'
                 break;
             case 'BLT':
-                answer_menu = '추천 메뉴 1: ' + menu;
-                answer_sau = '추천 소스 : 마요네즈, 사우스웨스트 치폴레'
+                answer_menu =  menu;
+                answer_sau = '마요네즈, 사우스웨스트 치폴레'
                 break;
             default:
                 answer_menu = '올바른 메뉴 정보가 없습니다.';
@@ -160,24 +160,24 @@
         //메뉴 정보에 따라 메뉴 추천 설정
         switch (menu2) {
             case '로스트 치킨':
-                answer_menu2 = '추천 메뉴 2: ' + menu2;
-                answer_sau2 = '추천 소스 : 사우스웨스트 치폴레, 스윗 칠리'
+                answer_menu2 =  menu2;
+                answer_sau2 = '사우스웨스트 치폴레, 스윗 칠리'
                 break;
             case '치킨 데리야끼':
-                answer_menu2 = '추천 메뉴 2 : ' + menu2;
-                answer_sau2 = '추천 소스 : 스모크 바베큐, 마요네즈'
+                answer_menu2 = menu2;
+                answer_sau2 = '스모크 바베큐, 마요네즈'
                 break;
             case '스파이시 이탈리안':
-                answer_menu2 = '추천 메뉴 2 : ' + menu2;
-                answer_sau2 = '추천 소스 : 랜치, 스윗 어니언'
+                answer_menu2 = menu2;
+                answer_sau2 = '랜치, 스윗 어니언'
                 break;
             case '풀드 포크 바베큐':
-                answer_menu2 = '추천 메뉴 2 : ' + menu2;
-                answer_sau2 = '추천 소스 : 랜치, 스모크 바베큐'
+                answer_menu2 = menu2;
+                answer_sau2 = '랜치, 스모크 바베큐'
                 break;
             case '햄':
-                answer_menu2 = '추천 메뉴 2 : ' + menu2;
-                answer_sau2 = '추천 소스 : 랜치, 스윗 칠리'
+                answer_menu2 =  menu2;
+                answer_sau2 = '랜치, 스윗 칠리'
                 break;
             default:
                 answer_menu2 = '없다';
@@ -199,14 +199,17 @@
         */
 
         // 추천 빵 출력
-        document.getElementById('breadRecommendation').innerText = answer_bread;
+        document.getElementById('breadRecommendation').innerText = '추천 빵: ' + answer_bread;
+
+        
 
         
         // 추천 메뉴 1과 추천 소스를 하나의 문자열로 결합-->이걸 <표>형태에 밀어넣기
-        var recommendation1 = answer_menu + '\n' + answer_sau;
+        var recommendation1 = '추천메뉴: '+ answer_menu + '\n' + '추천소스: ' +answer_sau;
 
         // 추천 메뉴 2와 추천 소스를 하나의 문자열로 결합
-        var recommendation2 = answer_menu2 + '\n' + answer_sau2;
+        var recommendation2 = '추천메뉴: '+ answer_menu2 + '\n' +'추천소스: ' + answer_sau2;
+        
 
         // 메뉴 1과 소스 1 출력
         document.getElementById('menuRecommendation').innerText = recommendation1;
@@ -261,8 +264,8 @@
           const storage = firebase.storage();
 
           //유저 정보확인
-          var 뺀거 = localStorage.getItem('user');//localStorage에서 user정보 빼오기
-          $('#userName').html(JSON.parse(뺀거).displayName + ' 회원님');
+          //var 뺀거 = localStorage.getItem('user');//localStorage에서 user정보 빼오기
+         // $('#userName').html(JSON.parse(뺀거).displayName + ' 회원님');
 
           //유저의 로그인상태를 확인하기:모든 html파일에 넣기
             firebase.auth().onAuthStateChanged((user)=>{
@@ -272,25 +275,57 @@
                     
                 }
             })
+
+
+
           //이 위에는 지우면 안되고 그대로 사용
 
           //다시하기 버튼을 누르면
           $('#restart-btn').click(function(){
-
             window.location.href = '/mypage.html'; //다시 마이페이지로 간다.
-
           })
 
 
-          //저장하기 버튼을 누르면
-          $('#save-btn').click(function(){
-            //firestore 계정?에 저장하는 기능.
-            
 
+          
+          //저장하기 버튼을 누르면
+           $('#save-btn').click(function(){
+            //firestore 계정?에 저장하는 기능.
+
+
+                // Define the data to be saved
+                var 마이레시피데이터 = {
+                  owner : 내uid,
+                  bread: answer_bread,
+                  menu: answer_menu,
+                  menu2: answer_menu2,
+                  sau: answer_sau,
+                  sau2: answer_sau2
+                };
+
+
+
+                // Store the data in Firestore with custom document ID
+                // db.collection('user').doc(result.user.uid).set(유저정보);
+                //db.collection('myrecipe').doc(내uid).set(마이레시피데이터);
+
+                
+                db.collection('myrecipe').add(마이레시피데이터)
+                  .then(() => {
+                    console.log("Document updated successfully");
+                    // Additional code after the update
+                  })
+                  .catch((error) => {
+                    console.error("Error updating document: ", error);
+                });
+
+
+              })
+
+ 
             //window.location.href = '/myrecipe.html';//나만의 레시피 화면으로 간다.
 
-          })
-
+         
     </script>
 
 

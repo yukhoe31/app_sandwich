@@ -49,7 +49,7 @@
 
     <div class="container">
         상세페이지임 
-        <button id="edit" >수정</button>
+        
         <div class="detail-pic my-4" style="background-image: url('https://placeimg.com/640/380/tech');"></div>
         <div>
           <h5>올린사람 : 모름</h5>
@@ -58,6 +58,8 @@
           <p class="date">올린날짜</p>
           <p class="price">가격</p>
         </div>
+        <button id="edit" >수정</button>
+        <button id="chat" >채팅</button>
     </div>
 
     
@@ -97,10 +99,41 @@
           const db= firebase.firestore();
           const storage = firebase.storage();
 
+                    
+          //유저 정보확인
+          var 뺀거 = localStorage.getItem('user');//localStorage에서 user정보 빼오기
+          //$('#userName').html(JSON.parse(뺀거).displayName + ' 회원님');
+          
+
+          //유저의 로그인상태를 확인하기:모든 html파일에 넣기
+            firebase.auth().onAuthStateChanged((user)=>{
+                if (user) {
+                    console.log(user);
+                    localStorage.setItem('user',JSON.stringify(user));//로컬 스토리지에 유저 정보 저장하기
+                    
+                }
+            })
+
+          
+          $('#chat').click(function(){
+            var 데이터 = {
+              who : [내uid, 판매자uid] ,
+              product : 상품명,
+              date : new Date()
+            }
+            db.collection('chatroom').add(데이터)
+          })
+          var 판매자uid;
+          var 상품명;
+          var 내uid = JSON.parse(localStorage.getItem('user')).uid;
+
+
+
           var 쿼리스트링 = new URLSearchParams(window.location.search);
 
           db.collection('product').doc(쿼리스트링.get('id')).get().then((result)=>{
             console.log(result.data())
+            result.data().uid
             $('.author').html('올린사람 : ' + result.data().이름)
 
             $('.title').html(result.data().제목)

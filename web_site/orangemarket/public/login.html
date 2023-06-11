@@ -117,10 +117,10 @@
           const storage = firebase.storage();
 
           //유저 정보확인
-          /*
+          
           var 뺀거 = localStorage.getItem('user');//localStorage에서 user정보 빼오기
-          $('#userName').html(JSON.parse(뺀거).displayName + ' 회원님');
-          */
+          //$('#userName').html(JSON.parse(뺀거).displayName + ' 회원님');
+        
 
           //유저의 로그인상태를 확인하기:모든 html파일에 넣기
             firebase.auth().onAuthStateChanged((user)=>{
@@ -145,7 +145,8 @@
 
                 var 유저정보 = {
                     nickname : 닉네임,
-                    email : 이메일
+                    email : 이메일,
+
                 }
 
             
@@ -156,8 +157,9 @@
                 console.log(result.user);
                 //result.user.updateProfile({displayName : 닉네임});
                 console.log("회원가입 성공!")
+                alert("회원가입에 성공했습니다.");
             
-                //window.location.href = '/joinceleb.html'
+                //window.location.href = '/joinceleb.html' //이거 빼야 user컬렉션에 유저uid저장된다.
             }).catch((error) => {
                 // 회원가입 실패 시 처리할 코드
                 console.error("회원가입 중 오류가 발생했습니다:", error);
@@ -203,7 +205,7 @@
              window.location.href = '/mypage.html';
         });
 
-                */
+        */
 
     </script>
   </body>
