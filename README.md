@@ -21,3 +21,7 @@
 # 프로젝트 전체 구조
 
 ![image](https://github.com/yukhoe31/app_sandwich/assets/129375429/883bc392-97f2-4528-aaae-e94d61b13f98)
+
+# 프로젝트 완성품 이용 방법
+
+mobile_app폴더 내의 써맞추.apk를 모바일 기기(ios, android 무관)에 다운로드 받아 실행한다.
