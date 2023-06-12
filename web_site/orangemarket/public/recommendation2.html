@@ -67,11 +67,11 @@
         const sau2 = localStorage.getItem("sau2");
 
 
-        var answer_menu2 = '없다';
-        var answer_sau2 = '없다' ;
-        var answer_bread= '없다' ;
-        var answer_menu= '없다';        
-        var answer_sau= '없다';
+        let answer_menu2;
+        let answer_sau2;
+        let answer_bread;
+        let answer_menu;        
+        let answer_sau;
         
 
 
@@ -286,8 +286,9 @@
 
 
 
-          //저장하기 버튼을 누르면
-           $('#save-btn').click(function(){
+
+      //저장하기 버튼을 누르면
+      $('#save-btn').click(function(){
             //firestore 계정?에 저장하는 기능.
 
             
@@ -305,19 +306,27 @@
               };
 
               // Save the data to Firestore
-              db.collection('myrecipe').doc(내uid).set(마이레시피데이터)
+              db.collection('myrecipe').add(마이레시피데이터)
                 .then(function(docRef) {
-                  console.log('마이레시피데이터 저장 성공');
+                  console.log('마이레시피데이터 저장 성공:', docRef.id);
                   window.location.href = '/myrecipe.html'; // Redirect to myrecipe.html after successful save
+                })
+                .catch(function(error) {
+                  console.error('마이레시피데이터 저장 실패:', error);
                 });
-                //.catch(function(error) {
-                  //console.error('마이레시피데이터 저장 실패:', error);
-                //});
 
 
 
 
            })
+
+
+
+
+
+
+
+
 
  
             //window.location.href = '/myrecipe.html';//나만의 레시피 화면으로 간다.

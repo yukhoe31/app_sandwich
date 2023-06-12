@@ -307,12 +307,12 @@
               // Save the data to Firestore
               db.collection('myrecipe').doc(내uid).set(마이레시피데이터)
                 .then(function(docRef) {
-                  console.log('마이레시피데이터 저장 성공');
+                  console.log('마이레시피데이터 저장 성공:', docRef.id);
                   window.location.href = '/myrecipe.html'; // Redirect to myrecipe.html after successful save
+                })
+                .catch(function(error) {
+                  console.error('마이레시피데이터 저장 실패:', error);
                 });
-                //.catch(function(error) {
-                  //console.error('마이레시피데이터 저장 실패:', error);
-                //});
 
 
 

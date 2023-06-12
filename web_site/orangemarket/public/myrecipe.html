@@ -52,167 +52,20 @@
 
     <!--이 위에는 지우면 안되고 그대로 사용-->
 
-    <div id="breadRecommendation"></div>
-    <div id="menuRecommendation"></div>
-    <div id="menuRecommendation2"></div>
-    <div id="sauRecommendation"></div>
-    <div id="sauRecommendation2"></div>
-
-    <script>
-        // 로컬 스토리지에서 빵과 메뉴 정보 가져오기
-        const bread = localStorage.getItem("bread");
-        const menu = localStorage.getItem("menu");            
-        const sau = localStorage.getItem("sau");  
-        const menu2 = localStorage.getItem("menu2");
-        const sau2 = localStorage.getItem("sau2");
-//===============================================
-
-    
-
-        let answer_menu2;
-        let answer_sau2;
-        let answer_bread;
-        let answer_menu;        
-        let answer_sau;
-        
-
-
-        // 빵 정보에 따라 빵 추천 설정
-        switch (bread) {
-            case '허니오트':
-                answer_bread = bread;
-                break;
-            case '하티':
-                answer_bread =  bread;
-                break;
-            case '위트':
-                answer_bread = bread;
-                break;
-            case '파마산 오레가노':
-                answer_bread = bread;
-                break;
-            case '화이트':
-                answer_bread =  bread;
-                break;
-            case '플랫브래드':
-                answer_bread = bread;
-                break;
-            default:
-                answer_bread = '올바른 빵 정보가 없습니다.';
-        }
-
-
-        //메뉴 정보에 따라 메뉴 추천 설정
-        switch (menu) {
-            case '치킨 슬라이스':
-                answer_menu =  menu;
-                answer_sau = '랜치, 스윗 칠리'
-                break;
-            case '로티세리 바베큐 치킨':
-                answer_menu =  menu;
-                answer_sau = '스윗 칠리, 랜치'
-                break;
-            case '스테이크 앤 치즈':
-                answer_menu = menu;
-                answer_sau = '사우스웨스트 치폴레, 마요네즈'
-                break;
-            case '참치':
-                answer_menu =  menu;
-                answer_sau = '핫 칠리, 스윗 칠리'
-                break;
-            case '쉬림프':
-                answer_menu =  menu;
-                answer_sau = '랜치, 스윗 칠리'
-                break;
-            case '에그마요':
-                answer_menu = menu;
-                answer_sau = '랜치, 스윗 칠리'
-                break;
-            case '베지':
-                answer_menu =  menu;
-                answer_sau = '레드와인 식초, 올리브 오일'
-                break;
-            case '치킨 베이컨 아보카도':
-                answer_menu =  menu;
-                answer_sau = '랜치, 홀스래디쉬'
-                break;
-            case '써브웨이 클럽':
-                answer_menu =  menu;
-                answer_sau = '랜치, 스윗 어니언'
-                break;
-            case '이탈리안 BMT':
-                answer_menu = menu;
-                answer_sau = '랜치, 스윗 어니언'
-                break;
-            case 'K-바베큐':
-                answer_menu =  menu;
-                answer_sau = '올리브 오일, 후추'
-                break;
-            case 'BLT':
-                answer_menu =  menu;
-                answer_sau = '마요네즈, 사우스웨스트 치폴레'
-                break;
-            default:
-                answer_menu = '올바른 메뉴 정보가 없습니다.';
-
-                //break;
-        }
-
-        
-        //메뉴 정보에 따라 메뉴 추천 설정
-        switch (menu2) {
-            case '로스트 치킨':
-                answer_menu2 =  menu2;
-                answer_sau2 = '사우스웨스트 치폴레, 스윗 칠리'
-                break;
-            case '치킨 데리야끼':
-                answer_menu2 = menu2;
-                answer_sau2 = '스모크 바베큐, 마요네즈'
-                break;
-            case '스파이시 이탈리안':
-                answer_menu2 = menu2;
-                answer_sau2 = '랜치, 스윗 어니언'
-                break;
-            case '풀드 포크 바베큐':
-                answer_menu2 = menu2;
-                answer_sau2 = '랜치, 스모크 바베큐'
-                break;
-            case '햄':
-                answer_menu2 =  menu2;
-                answer_sau2 = '랜치, 스윗 칠리'
-                break;
-            default:
-                answer_menu2 = '없다';
-                answer_sau2 != '없다';
-                //break;
-        }
-
-        
-        
-        // 추천 메뉴 1과 추천 소스를 하나의 문자열로 결합-->이걸 <표>형태에 밀어넣기
-        var recommendation1 = '추천메뉴: '+ answer_menu + '\n' + '추천소스: ' +answer_sau;
-
-        // 추천 메뉴 2와 추천 소스를 하나의 문자열로 결합
-        var recommendation2 = '추천메뉴: '+ answer_menu2 + '\n' +'추천소스: ' + answer_sau2;
-        
-
-        // 메뉴 1과 소스 1 출력
-        document.getElementById('menuRecommendation').innerText = recommendation1;
-
-        // 추천 메뉴 2와 소스 2가 존재할 경우에만 출력
-        if (answer_menu2 != '없다' && answer_sau2 != '없다') {
-            document.getElementById('menuRecommendation2').innerText = recommendation2;
-        }
-
-
-
-
+    <!-- Example HTML code for displaying recipe data -->
+    <!--<h1 id="recipeTitle"></h1>-->
+    <!--<p id="recipeDescription"></p>-->
+    <p id="bread"></p> <!-- Add ID for bread element -->
+    <p id="menu"></p> <!-- Add ID for menu element -->
+    <p id="menu2"></p> <!-- Add ID for menu2 element -->
+    <p id="sau"></p> <!-- Add ID for sau element -->
+    <p id="sau2"></p> <!-- Add ID for sau2 element -->
 
 
         
     </script>
     <br>
-    <button type="submit" class="btn btn-success" id="edit-btn">수정하기</button>
+    <!--<button type="submit" class="btn btn-success" id="edit-btn">수정하기</button>-->
     <button type="submit" class="btn btn-success" id="exit-btn">나가기</button>
 
 
@@ -270,14 +123,16 @@
 
 
           //수정하기 버튼을 누르면
+          /*
           $('#edit-btn').click(function(){
 
             //window.location.href = '/mypage.html'; //다시 마이페이지로 간다.
 
           })
+          */
 
 
-          //저장하기 버튼을 누르면
+          //나가기 버튼을 누르면
           $('#exit-btn').click(function(){
             //firestore 계정?에 저장하는 기능.
             
@@ -285,6 +140,62 @@
             window.location.href = '/mypage.html';//마이페이지 화면으로 간다.
 
           })
+
+
+         
+          var 내uid = JSON.parse(localStorage.getItem('user')).uid;
+
+          db.collection('myrecipe').where('owner', '==', 내uid).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              if (doc.exists) {
+                console.log("Document data:", doc.data());
+                // Access the specific fields and display them on the page as desired
+                var recipeData = doc.data();
+                console.log(recipeData);
+               
+      localStorage.setItem('recipeData', JSON.stringify(recipeData)); // recipeData를 localStorage에 저장
+      displayRecipeData(recipeData); // displayRecipeData 함수로 데이터 표시
+
+                // Example: Display recipe title
+                //var recipeTitle = recipeData.title;
+                //console.log("Recipe Title:", recipeTitle);
+                // Update the HTML elements with the retrieved data
+                // Example: $('#recipeTitle').html(recipeTitle);
+              } else {
+                console.log("No such document!");
+              }
+            });
+          }).catch((error) => {
+            console.log("Error getting documents:", error);
+          });
+
+          //========
+
+          function displayRecipeData(recipeData) {
+  var breadElement = document.getElementById('bread');
+  var menuElement = document.getElementById('menu');
+  var menu2Element = document.getElementById('menu2');
+  var sauElement = document.getElementById('sau');
+  var sau2Element = document.getElementById('sau2');
+
+  breadElement.innerHTML = '추천 빵: ' + recipeData.bread;
+  menuElement.innerHTML = '추천 메뉴: ' + recipeData.menu;
+  sauElement.innerHTML =  '추천 소스: ' + recipeData.sau;
+  
+  
+  // Check if menu2 and sau2 both have the value "없다"
+  if (recipeData.menu2 !== '없다' || recipeData.sau2 !== '없다') {
+    menu2Element.innerHTML = '추천 메뉴: '+recipeData.menu2;
+    sau2Element.innerHTML = '추천 소스: '+recipeData.sau2;
+  } else {
+    // Both menu2 and sau2 are "없다", so hide the corresponding elements
+    menu2Element.style.display = "none";
+    sau2Element.style.display = "none";
+  }
+
+
+}
+        
 
     </script>
 
