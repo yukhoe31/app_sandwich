@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>써맞추</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+
+  <!--body 시작-->
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">나만의 레시피</a>
+        <!--<span class="ms-auto mx-2" id="userName">익명</span> -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--이 위에는 지우면 안되고 그대로 사용-->
+
+    <!-- Example HTML code for displaying recipe data -->
+    <!--<h1 id="recipeTitle"></h1>-->
+    <!--<p id="recipeDescription"></p>-->
+    <p id="bread"></p> <!-- Add ID for bread element -->
+    <p id="menu"></p> <!-- Add ID for menu element -->
+    <p id="menu2"></p> <!-- Add ID for menu2 element -->
+    <p id="sau"></p> <!-- Add ID for sau element -->
+    <p id="sau2"></p> <!-- Add ID for sau2 element -->
+
+
+        
+    </script>
+    <br>
+    <!--<button type="submit" class="btn btn-success" id="edit-btn">수정하기</button>-->
+    <button type="submit" class="btn btn-success" id="exit-btn">나가기</button>
+
+
+
+
+    <!--이 아래는 지우면 안되고 그대로 사용-->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!--bootstrap-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <!--제이쿼리-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAHSSKGpM31Qiwydu1P6rVo8e634LD7RLE",
+        authDomain: "orangemarket-d1467.firebaseapp.com",
+        projectId: "orangemarket-d1467",
+        storageBucket: "orangemarket-d1467.appspot.com",
+        messagingSenderId: "78991260112",
+        appId: "1:78991260112:web:05a46179980122c2fe61d5",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+          const db= firebase.firestore();
+          const storage = firebase.storage();
+
+          //유저 정보확인
+          var 뺀거 = localStorage.getItem('user');//localStorage에서 user정보 빼오기
+          $('#userName').html(JSON.parse(뺀거).displayName + ' 회원님');
+
+          //유저의 로그인상태를 확인하기:모든 html파일에 넣기
+            firebase.auth().onAuthStateChanged((user)=>{
+                if (user) {
+                    console.log(user);
+                    localStorage.setItem('user',JSON.stringify(user));//로컬 스토리지에 유저 정보 저장하기
+                    
+                }
+            })
+          //이 위에는 지우면 안되고 그대로 사용
+
+
+
+          //수정하기 버튼을 누르면
+          /*
+          $('#edit-btn').click(function(){
+
+            //window.location.href = '/mypage.html'; //다시 마이페이지로 간다.
+
+          })
+          */
+
+
+          //나가기 버튼을 누르면
+          $('#exit-btn').click(function(){
+            //firestore 계정?에 저장하는 기능.
+            
+
+            window.location.href = '/mypage.html';//마이페이지 화면으로 간다.
+
+          })
+
+
+         
+          var 내uid = JSON.parse(localStorage.getItem('user')).uid;
+
+          db.collection('myrecipe').where('owner', '==', 내uid).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              if (doc.exists) {
+                console.log("Document data:", doc.data());
+                // Access the specific fields and display them on the page as desired
+                var recipeData = doc.data();
+                console.log(recipeData);
+               
+      localStorage.setItem('recipeData', JSON.stringify(recipeData)); // recipeData를 localStorage에 저장
+      displayRecipeData(recipeData); // displayRecipeData 함수로 데이터 표시
+
+                // Example: Display recipe title
+                //var recipeTitle = recipeData.title;
+                //console.log("Recipe Title:", recipeTitle);
+                // Update the HTML elements with the retrieved data
+                // Example: $('#recipeTitle').html(recipeTitle);
+              } else {
+                console.log("No such document!");
+              }
+            });
+          }).catch((error) => {
+            console.log("Error getting documents:", error);
+          });
+
+          //========
+
+          function displayRecipeData(recipeData) {
+  var breadElement = document.getElementById('bread');
+  var menuElement = document.getElementById('menu');
+  var menu2Element = document.getElementById('menu2');
+  var sauElement = document.getElementById('sau');
+  var sau2Element = document.getElementById('sau2');
+
+  breadElement.innerHTML = '추천 빵: ' + recipeData.bread;
+  menuElement.innerHTML = '추천 메뉴: ' + recipeData.menu;
+  sauElement.innerHTML =  '추천 소스: ' + recipeData.sau;
+  
+  
+  // Check if menu2 and sau2 both have the value "없다"
+  if (recipeData.menu2 !== '없다' || recipeData.sau2 !== '없다') {
+    menu2Element.innerHTML = '추천 메뉴: '+recipeData.menu2;
+    sau2Element.innerHTML = '추천 소스: '+recipeData.sau2;
+  } else {
+    // Both menu2 and sau2 are "없다", so hide the corresponding elements
+    menu2Element.style.display = "none";
+    sau2Element.style.display = "none";
+  }
+
+
+}
+        
+
+    </script>
+
+
+  </body>
+</html>

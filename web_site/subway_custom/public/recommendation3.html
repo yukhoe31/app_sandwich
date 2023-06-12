@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>써맞추</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+
+  <!--body 시작-->
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">추천 조합</a>
+        <!--<span class="ms-auto mx-2" id="userName">익명</span>-->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--이 위에는 지우면 안되고 그대로 사용-->
+
+    <div id="breadRecommendation"></div>
+    <div id="menuRecommendation"></div>
+    <div id="menuRecommendation2"></div>
+    <div id="sauRecommendation"></div>
+    <div id="sauRecommendation2"></div>
+
+    <script>
+        // 로컬 스토리지에서 빵 정보 가져오기
+        const bread = localStorage.getItem("bread");
+        const menu = localStorage.getItem("menu");            
+        const sau = localStorage.getItem("sau");  
+        const menu2 = localStorage.getItem("menu2");
+        const sau2 = localStorage.getItem("sau2");
+
+
+        var answer_menu2 = '없다';
+        var answer_sau2 = '없다' ;
+        var answer_bread= '없다' ;
+        var answer_menu= '없다';        
+        var answer_sau= '없다';
+        
+
+
+        // 빵 정보에 따라 빵 추천 설정
+        switch (bread) {
+            case '허니오트':
+                answer_bread = bread;
+                break;
+            case '하티':
+                answer_bread =  bread;
+                break;
+            case '위트':
+                answer_bread = bread;
+                break;
+            case '파마산 오레가노':
+                answer_bread = bread;
+                break;
+            case '화이트':
+                answer_bread =  bread;
+                break;
+            case '플랫브래드':
+                answer_bread = bread;
+                break;
+            default:
+                answer_bread = '올바른 빵 정보가 없습니다.';
+        }
+
+
+        //메뉴 정보에 따라 메뉴 추천 설정
+        switch (menu) {
+            case '치킨 슬라이스':
+                answer_menu =  menu;
+                answer_sau = '랜치, 스윗 칠리'
+                break;
+            case '로티세리 바베큐 치킨':
+                answer_menu =  menu;
+                answer_sau = '스윗 칠리, 랜치'
+                break;
+            case '스테이크 앤 치즈':
+                answer_menu = menu;
+                answer_sau = '사우스웨스트 치폴레, 마요네즈'
+                break;
+            case '참치':
+                answer_menu =  menu;
+                answer_sau = '핫 칠리, 스윗 칠리'
+                break;
+            case '쉬림프':
+                answer_menu =  menu;
+                answer_sau = '랜치, 스윗 칠리'
+                break;
+            case '에그마요':
+                answer_menu = menu;
+                answer_sau = '랜치, 스윗 칠리'
+                break;
+            case '베지':
+                answer_menu =  menu;
+                answer_sau = '레드와인 식초, 올리브 오일'
+                break;
+            case '치킨 베이컨 아보카도':
+                answer_menu =  menu;
+                answer_sau = '랜치, 홀스래디쉬'
+                break;
+            case '써브웨이 클럽':
+                answer_menu =  menu;
+                answer_sau = '랜치, 스윗 어니언'
+                break;
+            case '이탈리안 BMT':
+                answer_menu = menu;
+                answer_sau = '랜치, 스윗 어니언'
+                break;
+            case 'K-바베큐':
+                answer_menu =  menu;
+                answer_sau = '올리브 오일, 후추'
+                break;
+            case 'BLT':
+                answer_menu =  menu;
+                answer_sau = '마요네즈, 사우스웨스트 치폴레'
+                break;
+            default:
+                answer_menu = '올바른 메뉴 정보가 없습니다.';
+
+                //break;
+        }
+
+        
+        //메뉴 정보에 따라 메뉴 추천 설정
+        switch (menu2) {
+            case '로스트 치킨':
+                answer_menu2 =  menu2;
+                answer_sau2 = '사우스웨스트 치폴레, 스윗 칠리'
+                break;
+            case '치킨 데리야끼':
+                answer_menu2 = menu2;
+                answer_sau2 = '스모크 바베큐, 마요네즈'
+                break;
+            case '스파이시 이탈리안':
+                answer_menu2 = menu2;
+                answer_sau2 = '랜치, 스윗 어니언'
+                break;
+            case '풀드 포크 바베큐':
+                answer_menu2 = menu2;
+                answer_sau2 = '랜치, 스모크 바베큐'
+                break;
+            case '햄':
+                answer_menu2 =  menu2;
+                answer_sau2 = '랜치, 스윗 칠리'
+                break;
+            default:
+                answer_menu2 = '없다';
+                answer_sau2 != '없다';
+                //break;
+        }
+
+
+        /*
+        //추천 메뉴 출력
+        document.getElementById('menuRecommendation').innerText = answer_menu;
+        document.getElementById('sauRecommendation').innerText = answer_sau;
+
+        // 추천 메뉴2가 존재한다면
+        if (answer_menu2 != '없다' && answer_sau2 != '없다') {
+            document.getElementById('menuRecommendation2').innerText =  answer_menu2;
+            document.getElementById('sauRecommendation2').innerText = answer_sau2;
+        }
+        */
+
+        // 추천 빵 출력
+        document.getElementById('breadRecommendation').innerText = '추천 빵: ' + answer_bread;
+
+        
+
+        
+        // 추천 메뉴 1과 추천 소스를 하나의 문자열로 결합-->이걸 <표>형태에 밀어넣기
+        var recommendation1 = '추천메뉴: '+ answer_menu + '\n' + '추천소스: ' +answer_sau;
+
+        // 추천 메뉴 2와 추천 소스를 하나의 문자열로 결합
+        var recommendation2 = '추천메뉴: '+ answer_menu2 + '\n' +'추천소스: ' + answer_sau2;
+        
+
+        // 메뉴 1과 소스 1 출력
+        document.getElementById('menuRecommendation').innerText = recommendation1;
+
+        // 추천 메뉴 2와 소스 2가 존재할 경우에만 출력
+        if (answer_menu2 != '없다' && answer_sau2 != '없다') {
+            document.getElementById('menuRecommendation2').innerText = recommendation2;
+        }
+
+        
+    </script>
+    <br>
+    <button type="submit" class="btn btn-success" id="restart-btn">처음으로</button>
+    <button type="submit" class="btn btn-success" id="save-btn">저장하기</button>
+
+
+
+
+    <!--이 아래는 지우면 안되고 그대로 사용-->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!--bootstrap-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <!--제이쿼리-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAHSSKGpM31Qiwydu1P6rVo8e634LD7RLE",
+        authDomain: "orangemarket-d1467.firebaseapp.com",
+        projectId: "orangemarket-d1467",
+        storageBucket: "orangemarket-d1467.appspot.com",
+        messagingSenderId: "78991260112",
+        appId: "1:78991260112:web:05a46179980122c2fe61d5",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+          const db= firebase.firestore();
+          const storage = firebase.storage();
+
+          //유저 정보확인
+          //var 뺀거 = localStorage.getItem('user');//localStorage에서 user정보 빼오기
+         // $('#userName').html(JSON.parse(뺀거).displayName + ' 회원님');
+
+          //유저의 로그인상태를 확인하기:모든 html파일에 넣기
+            firebase.auth().onAuthStateChanged((user)=>{
+                if (user) {
+                    console.log(user);
+                    localStorage.setItem('user',JSON.stringify(user));//로컬 스토리지에 유저 정보 저장하기
+                    
+                }
+            })
+
+
+          //이 위에는 지우면 안되고 그대로 사용
+
+          //다시하기 버튼을 누르면
+          $('#restart-btn').click(function(){
+            window.location.href = '/mypage.html'; //다시 마이페이지로 간다.
+          })
+
+
+
+          //저장하기 버튼을 누르면
+           $('#save-btn').click(function(){
+            //firestore 계정?에 저장하는 기능.
+
+            
+              // Get the user's UID from local storage
+              var 내uid = JSON.parse(localStorage.getItem('user')).uid;
+
+              // Define the data to be saved
+              var 마이레시피데이터 = {
+                owner: 내uid,
+                bread: answer_bread,
+                menu: answer_menu,
+                menu2: answer_menu2,
+                sau: answer_sau,
+                sau2: answer_sau2
+              };
+
+              // Save the data to Firestore
+              db.collection('myrecipe').doc(내uid).set(마이레시피데이터)
+                .then(function(docRef) {
+                  console.log('마이레시피데이터 저장 성공:', docRef.id);
+                  window.location.href = '/myrecipe.html'; // Redirect to myrecipe.html after successful save
+                })
+                .catch(function(error) {
+                  console.error('마이레시피데이터 저장 실패:', error);
+                });
+
+
+
+
+           })
+
+ 
+            //window.location.href = '/myrecipe.html';//나만의 레시피 화면으로 간다.
+
+            
+    </script>
+
+
+  </body>
+</html>
