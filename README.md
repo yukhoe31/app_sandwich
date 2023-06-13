@@ -25,13 +25,13 @@
 사용자에게 입맛 기호도(선호하는 식감, 맛)등을 물어보고,
 사용자의 답변에 따라 맞춤형 샌드위치 조합을 추천해주는 모바일 앱을 구축한다.
 
-# 프로젝트 시연 영상
-
-https://youtu.be/2wvJ0j32mzs
-
 # 프로젝트 전체 구조
 
 ![image](https://github.com/yukhoe31/app_sandwich/assets/129375429/883bc392-97f2-4528-aaae-e94d61b13f98)
+
+# 프로젝트 시연 영상
+
+https://youtu.be/2wvJ0j32mzs
 
 # 프로젝트 완성품 이용 방법
 
