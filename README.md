@@ -41,7 +41,7 @@ mobile_app폴더 내의 "써맞추.apk"를 모바일 기기(ios, android 무관)
 
 mobile_app/써맞추.apk : 가장 최신 버전의 애플리케이션 파일(바로 다운받아 사용가능)  
 Reports폴더 : 기초조사서, 중간보고서, 최종보고서  
-web_site/orangemarket : 가장 최신 버전의 웹사이트 폴더  
+web_site/subway_custom : 가장 최신 버전의 웹사이트 폴더  
 그외의 파일들 : 더는 사용하지 않는 더미 파일들  
 
 ## 참고문헌
